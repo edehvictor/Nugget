@@ -62,8 +62,10 @@ function fetchHeadLinesNews() {
         method: 'get',
         url, //the same url as stated in url
         params: {
-            appid: appId, //the same url as stated in appId
-            //get value in deg celsuis
+            appid: appId,
+            headers: {
+                Upgrade: 'HTTP/2.0',
+            }
         }
     })
         .then((value) => {
@@ -272,3 +274,8 @@ function displaynews(details) {
 }
 
 navbarBrand.addEventListener('click', fetchHeadLinesNews)
+
+function hideSpinner() {
+    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('.weather-content-wrap').style.display ='block'
+}
