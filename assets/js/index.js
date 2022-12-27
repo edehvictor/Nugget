@@ -63,9 +63,9 @@ function fetchHeadLinesNews() {
         url, //the same url as stated in url
         params: {
             appid: appId,
-            headers: {
-                Upgrade: 'HTTP/2.0',
-            }
+        },
+        headers: {
+            Upgrade: 'HTTP/2.0',
         }
     })
         .then((value) => {
@@ -73,6 +73,7 @@ function fetchHeadLinesNews() {
                 displaynews(value.data.articles)
                 newsType.innerHTML = 'Headlines'
                 lastSection.style.display ='block'
+                hideSpinner()
             }
         })
         .catch((error) => console.log(error))
@@ -80,149 +81,149 @@ function fetchHeadLinesNews() {
 
 
 
-function fetchGeneralNews() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=general&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// function fetchGeneralNews() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=general&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-            //get value in deg celsuis
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                newsType.innerHTML = 'General News'
-                lastSection.style.display ='block'
-            }
-        })
-        .catch((error) => console.log(error))
-}
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//             //get value in deg celsuis
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 newsType.innerHTML = 'General News'
+//                 lastSection.style.display ='block'
+//             }
+//         })
+//         .catch((error) => console.log(error))
+// }
 
 
 
-//     // businessNews
-function fetchBusinessNews() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=business&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// //     // businessNews
+// function fetchBusinessNews() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=business&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                newsType.innerHTML = 'Business News'
-                 lastSection.style.display ='block'
-            }
-        })
-        .catch((error) => console.log(error))
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 newsType.innerHTML = 'Business News'
+//                  lastSection.style.display ='block'
+//             }
+//         })
+//         .catch((error) => console.log(error))
 
-}
+// }
 
-// technology
-function fetchTechNews() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/top-headlines?country=NG&category=technology&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// // technology
+// function fetchTechNews() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/top-headlines?country=NG&category=technology&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                newsType.innerHTML = 'Technology News'
-                lastSection.style.display ='block'
-            }
-        })
-        .catch((error) => console.log(error))
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 newsType.innerHTML = 'Technology News'
+//                 lastSection.style.display ='block'
+//             }
+//         })
+//         .catch((error) => console.log(error))
 
-}
+// }
 
-// entertain
-function fetchEntertainmentnews() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// // entertain
+// function fetchEntertainmentnews() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                newsType.innerHTML = 'Entertainment News'
-                lastSection.style.display ='block'
-            }
-        })
-        .catch((error) => console.log(error))
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 newsType.innerHTML = 'Entertainment News'
+//                 lastSection.style.display ='block'
+//             }
+//         })
+//         .catch((error) => console.log(error))
 
-}
+// }
 
-// sportsNews
-function fetchSportNews() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=sports&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// // sportsNews
+// function fetchSportNews() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/top-headlines?country=ng&category=sports&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                newsType.innerHTML = 'Sports News'
-                lastSection.style.display ='block'
-            }
-        })
-        .catch((error) => console.log(error))
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 newsType.innerHTML = 'Sports News'
+//                 lastSection.style.display ='block'
+//             }
+//         })
+//         .catch((error) => console.log(error))
 
-}
+// }
 
-// searchBtn
-function fetchNewsQuery() {
-    const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
-    const url = 'https://newsapi.org/v2/everything?q=newsQuery.innerHt&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
+// // searchBtn
+// function fetchNewsQuery() {
+//     const appId = '091a4cc79cc24c52aa024a2ab4b2c197'
+//     const url = 'https://newsapi.org/v2/everything?q=newsQuery.innerHt&apiKey=091a4cc79cc24c52aa024a2ab4b2c197';
 
-    // axios returns a Promise
-    axios({
-        method: 'get',
-        url, //the same url as stated in url
-        params: {
-            appid: appId, //the same url as stated in appId
-        }
-    })
-        .then((value) => {
-            if (value) {
-                displaynews(value.data.articles)
-                console.log(value)
-            }
-        })
-        .catch((error) => console.log(error))
+//     // axios returns a Promise
+//     axios({
+//         method: 'get',
+//         url, //the same url as stated in url
+//         params: {
+//             appid: appId, //the same url as stated in appId
+//         }
+//     })
+//         .then((value) => {
+//             if (value) {
+//                 displaynews(value.data.articles)
+//                 console.log(value)
+//             }
+//         })
+//         .catch((error) => console.log(error))
 
-}
+// }
 
 function displaynews(details) {
     display.innerHTML = ""
